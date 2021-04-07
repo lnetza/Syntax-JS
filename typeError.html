@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+
+        <button onclick="referenceError();">ReferenceError</button>
+        <button onclick="rangeError();">RangeError</button>
+        <button onclick="typeError();">TypeError</button>
+        <button onclick="uriError();">URIError</button>
+        <button onclick="syntaxError();">SyntaxError</button>
+
+        <script>
+            function handleError(error){
+                switch(error.name){
+                    case 'ReferenceError':
+                        console.log("Reference error: "+error.message);
+                        break;
+                    case 'RangeError':
+                        console.log("Range error:"+error.message);
+                        break;
+                    case 'TypeError':
+                        console.log("Type error"+error.message);
+                        break;
+                    case 'URIError':
+                        console.log("URI error"+error.message);
+                        break;
+                    case 'SyntaxError':
+                        console.log("Syntax error:" + error.message)
+                        break;
+                    case 'EvalError':
+                        console.log("Evaluation error:"+error.message);
+                        break;
+                    default:
+                        console.log("Error type:"+error.name+"- Message"+error.message);
+                        break;
+                }
+            }
+
+            function referenceError(){
+                //Cuando no esta definida la variable
+                let result;
+
+                try{
+                    result = x/10;
+                } catch(error){
+                    handleError(error);
+                }
+            }
+
+            function rangeError(){
+                let result = 0;
+
+                try {
+                    //Error de rango porque un número no puede tener 200 dígitos significativos 
+                    result.toPrecision(200);
+                } catch(error){
+                    handleError(error);
+                }
+            }
+
+            function typeError(){
+                let result = 0;
+
+                try{
+                    //Error generado cuando el resultado es un numero
+                    result.toUpperCase();
+                } catch(error){
+                    handleError(error);
+                }
+            }
+
+            function uriError(){
+                let uri = "hhtp://www.netinc.com/path%%%/file name";
+
+                try{
+                    //Error generado por una URL mal
+                    decodeURI(uri);
+                } catch(error){
+                    handleError(error);
+                }
+            }
+
+            function syntaxError(){
+                try{
+                    //Error de sintaxis; porque falta una comilla única final
+                    let sum = eval("alert('Hello)");
+                } catch (error){
+                    handleError(error);
+                }
+            }
+
+            
+
+        </script>
+    </body>
+</html>

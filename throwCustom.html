@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<body>
+    <button onclick="throwError();">throwError</button>
+
+    <script>
+        function throwError(){
+            try{
+                attemptDivision();
+            } catch(error){
+                console.log(error.message + " - Error Type: " + error.name);
+            }
+        }
+
+        function attemptDivision(){
+            let result;
+            
+            try{
+                result = x / 10;
+            } catch (error){
+                throw{
+                    "message": "In the attemptDivision() method the following error ocurred " + error.message,
+                    "name": "CustomError"
+                }
+            }
+
+        }
+
+    </script>
+</body>
