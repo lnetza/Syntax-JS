@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="forofSample();">for/of</button>
+        <button onclick="loopStringSample();">Looping over a string</button>
+        <button onclick="breakSample();">BreakSample</button>
+        <button onclick="continueSample();">Continue</button>
+
+        <script>
+            'use strict';
+
+            let _products = [
+                {
+                    "productID": 680,
+                    "name": "HL Road Frame - Black, 58",
+                    "productNumber": "FR-R92B-58",
+                    "color": "Black",
+                    "standardCost": 139.31,
+                    "listPrice": 1431.50
+                },
+                {
+                    "productID": 681,
+                    "name": "HL Road 8",
+                    "productNumber": "FR-R92B-58",
+                    "color": "Black",
+                    "standardCost": 118.31,
+                    "listPrice": 1231.50
+
+                },
+                {
+                    "productID": 682,
+                    "name": "Frame",
+                    "productNumber": "FR-R92B-58",
+                    "color": "Black",
+                    "standardCost": 119.31,
+                    "listPrice": 1241.50
+                }
+            ];
+
+            function forofSample(){
+                for (const item of _products){
+                    console.log(JSON.stringify(item));
+                }
+            }
+
+            function loopStringSample(){
+                let productName = "HL Road Frame - Black, 58";
+                let letters = "";
+
+                for (const char of productName){
+                    letters += char;
+                }
+
+                console.log(letters);
+            }
+
+            function breakSample(){
+                for(const item of _products){
+                    if(item.standardCost < 120){
+                        break;
+                    }
+                    console.log(JSON.stringify(item));
+                }
+            }
+
+            function continueSample(){
+                for(const item of _products){
+                    if(item.standardCost > 120){
+                        continue;
+                    }
+                    console.log(JSON.stringify(item));
+                }
+            }
+        </script>
+
+    </body>
+
+    
+</html>
