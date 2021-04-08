@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <button onclick="this.style.background='Red'">
+            Event Handler
+        </button>
+        <button onclick="eventHandler(this)">
+            Pass to fuction from event handler
+        </button>
+
+        <script>
+            'use strict';
+
+            function eventHandler(ctl){
+                console.log(ctl.toString());
+            }
+
+        </script>
+
+    </body>
+</html>

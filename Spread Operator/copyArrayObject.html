@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="copyObjectArrays();">ObjectArray</button>
+        
+        <script>
+            let _products = [
+                {
+                    "productID": 680,
+                    "name": "HL Road Frame - Black, 58",
+                    "productNumber": "FR-R92B-58",
+                    "color": "Black",
+                    "standardCost": 139.31,
+                    "listPrice": 1431.50
+                },
+                {
+                    "productID": 681,
+                    "name": "HL Road 8",
+                    "productNumber": "FR-R92B-58",
+                    "color": "Black",
+                    "standardCost": 118.31,
+                    "listPrice": 1231.50
+
+                },
+                {
+                    "productID": 682,
+                    "name": "Frame",
+                    "productNumber": "FR-R92B-58",
+                    "color": "Black",
+                    "standardCost": 119.31,
+                    "listPrice": 1241.50
+                }
+            ];
+
+            function copyObjectArrays(){
+                let diff = [..._products];
+
+                diff[0].productID = 999;
+
+                console.log("Original:",_products[0].productID);
+                
+                console.log("Copia:",diff[0].productID);
+            }
+
+        </script>
+    </body>
+</html>

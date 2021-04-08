@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="functionScope();">functionScope</button>
+        
+        <script>
+            //Alcance global: 'esto' se asigna al objeto global / ventana 
+            console.log("Alcance global");
+            console.log(this.toString());
+            console.log("this === window ="+(this === window).toString());
+            console.log("Fin alcance global");
+
+            //// El alcance de la función "this" se asigna al objeto global / ventana
+            function functionScope() {
+                console.log(this.toString());
+                console.log("this === window =" + (this === window).toString());
+            }
+        </script>
+    </body>
+</html>

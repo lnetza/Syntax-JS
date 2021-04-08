@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <button onclick="copyArray();">CopyArray</button>
+
+        <script>
+            function copyArray(){
+                let arr = [1, 2 , 3];
+                let arr2 = [...arr];
+                let arr3 = [34,56,70];
+
+                let copyArr3 = arr3.slice(0);
+
+                arr2.push(4);
+                arr2[0] = 99;
+
+                console.log(arr);
+                console.log(arr2);
+                console.log("copyArr3",copyArr3);
+            }
+        </script>
+    </body>
+</html>
