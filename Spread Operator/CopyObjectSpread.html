@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="objectLiterals();">CopyObject</button>
+
+        <script>
+            function objectLiterals(){
+                let product = {
+                    productID: 680,
+                    name: "HL Road Frame - Black, 58",
+                    standarCost: 1059.31,
+                    listPrice: 1431.50
+                };
+
+                //Similar a Object.assign() pero con Spread
+                let prod2 = {...product};
+
+                let prod3 = Object.assign(product);
+
+                //Change the newly copied object
+                prod2.productID = 999;
+
+                //Se imprimen los objetos
+                console.log("Original",product);
+                console.log("Spread",prod2);
+                console.log("con assing()",prod3);
+
+
+                //Se imprimen objetos con los cambios
+                console.log("---");
+                console.log(product.productID);
+                console.log(prod2.productID);
+            }
+        </script>
+    </body>
+</html>

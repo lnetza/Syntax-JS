@@ -2,7 +2,7 @@
 <html>
     <body>
         <button onclick="copyObjectArrays();">ObjectArray</button>
-        
+
         <script>
             let _products = [
                 {
@@ -36,7 +36,9 @@
                 let diff = [..._products];
 
                 diff[0].productID = 999;
-
+                //Se visualiza que se modifico el original debido a que cuando se copio
+                //el Aray en realidad se hizo referencia al objeto en memoria, por lo tanto
+                //no es una copia nueva de valores
                 console.log("Original:",_products[0].productID);
                 
                 console.log("Copia:",diff[0].productID);

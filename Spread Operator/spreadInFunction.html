@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="spreadForFunctionArgs();">spreadOperator</button>
+        <script>
+            function spreadForFunctionArgs(){
+                //Sin spreadOperator
+                multipleParams(1,2,3);
+
+                //Con spreadOperator
+                let args = [1,2,3];
+                multipleParams(...args);
+            }
+
+            function multipleParams(arg1,arg2,arg3){
+                console.log(arg1);
+                console.log(arg2);
+                console.log(arg3);
+                console.log("----");
+            }
+        </script>
+    </body>
+</html>

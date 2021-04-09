@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="concatenateArray();">concatenateArray</button>
+        <script>
+            let _products = [
+                {
+                    "productID": 680,
+                    "name": "HL Road Frame - Black, 58",
+                    "productNumber": "FR-R92B-58",
+                    "color": "Black",
+                    "standardCost": 139.31,
+                    "listPrice": 1431.50
+                },
+                {
+                    "productID": 681,
+                    "name": "HL Road 8",
+                    "productNumber": "FR-R92B-58",
+                    "color": "Black",
+                    "standardCost": 118.31,
+                    "listPrice": 1231.50
+
+                },
+                {
+                    "productID": 682,
+                    "name": "Frame",
+                    "productNumber": "FR-R92B-58",
+                    "color": "Black",
+                    "standardCost": 119.31,
+                    "listPrice": 1241.50
+                }
+            ];
+
+            let _newProducts =[
+                {
+                productID: 172,
+                name: "AWC Logo Cap",
+                productNumber: "CA-3453",
+                color: "White",
+                standardCost: 6.78923,
+                listPrice: 12.34
+                },
+                {
+                productID: 173,
+                name: "Touring Fron Wheel",
+                productNumber: "CA-3353",
+                color: "White",
+                standardCost: 6.78923,
+                listPrice: 12.34
+                },
+                {
+                productID: 174,
+                name: "AWC Logo Cap",
+                productNumber: "CA-3153",
+                color: "White",
+                standardCost: 6.78923,
+                listPrice: 12.34
+                },
+            ];
+
+            //Concatenación
+            function concatenateArray(){
+                let allProducts = _products.concat(_newProducts);
+                console.log(allProducts);
+                console.log(allProducts.length);
+
+                let spProducts = [..._products, ..._newProducts];
+                console.log(spProducts.length);
+            }
+
+        </script>
+    </body>
+</html>
